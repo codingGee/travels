@@ -1,0 +1,38 @@
+source env/bin/activate
+
+python -m pip install django
+
+python -m pip freeze > requirements.txt
+
+python manage.py runserver localhost:9000
+
+
+#Postgresql commands
+sudo -u postgres psql
+CREATE DATABASE travels;
+CREATE USER AdminTravels WITH PASSWORD kim@123;
+
+ALTER ROLE AdminTravels SET client_encoding TO 'utf8';
+ALTER ROLE AdminTravels SET default_transaction_isolation TO 'read committed';
+ALTER ROLE AdminTravels SET timezone TO 'UTC';
+
+GRANT ALL PRIVILEGES ON DATABASE travels TO AdminTravels;
+\q
+
+#UFW firewall
+sudo ufw allow 8000
+
+
+
+drop DATABASE 
+DROP DATABASE monkmode_db;
+DROP DATABASE my_db;
+DROP DATABASE tempreg_db;
+DROP DATABASE travels;
+DROP DATABASE tempreg_postgres;
+
+#git 
+git status
+git add .
+git commit -m "django commit"
+git push origin master
