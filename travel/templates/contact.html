@@ -1,0 +1,15 @@
+{% extends "base/header.html" %}
+{% block content %}
+{% load static %}
+
+{% include "base/nav.html" %}
+      <div class="container">
+        <div class="d-flex justify-content-between mt-5">
+            <h1 class="text-success">Hello, {{ header }}</h1>
+            <p class="text-primary">{{ now }}</p>
+          </div>
+      </div>
+      <h1 class="text-center mt-5">Contact</h1>
+    
+
+{% endblock %}
